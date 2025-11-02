@@ -1,79 +1,93 @@
-<h1 align="center">✨ Full-Stack Interview Platform ✨</h1>
+# JustCode
 
-![Demo App](/frontend/public/screenshot-for-readme.png)
+**JustCode** is an AI-powered talent evaluation and coding platform for recruiters and developers. It streamlines assessment, real-time chat, and application tracking—all in a modern, full-stack web application.
 
-✨ Highlights:
+## Features
 
-- 🧑‍💻 VSCode-Powered Code Editor
-- 🔐 Authentication via Clerk
-- 🎥 1-on-1 Video Interview Rooms
-- 🧭 Dashboard with Live Stats
-- 🔊 Mic & Camera Toggle, Screen Sharing & Recording
-- 💬 Real-time Chat Messaging
-- ⚙️ Secure Code Execution in Isolated Environment
-- 🎯 Auto Feedback — Success / Fail based on test cases
-- 🎉 Confetti on Success + Notifications on Fail
-- 🧩 Practice Problems Page (solo coding mode)
-- 🔒 Room Locking — allows only 2 participants
-- 🧠 Background Jobs with Inngest (async tasks)
-- 🧰 REST API with Node.js & Express
-- ⚡ Data Fetching & Caching via TanStack Query
-- 🤖 CodeRabbit for PR Analysis & Code Optimization
-- 🧑‍💻 Git & GitHub Workflow (branches, PRs, merges)
-- 🚀 Deployment on Sevalla (free-tier friendly)
+- **User Authentication:** Sign up and login via Clerk (supports OAuth).
+- **AI-Powered Coding Assessments:** Automate skill screening and code evaluations for candidates.
+- **Real-Time Messaging:** Built-in chat via Stream Chat API for candidate-recruiter and peer communications.
+- **Application Tracking:** Keep tabs on job applications, interviews, and status updates.
+- **Role-Based Dashboards:** Distinct views for recruiters and developers.
+- **Cloud Database:** All user, job, and messaging data securely stored in MongoDB Atlas.
+- **Task Automation:** Leverage Inngest for background job scheduling (notifications, emails).
 
----
+## Tech Stack
 
-## 🧪 .env Setup
+- **Frontend:** React + Vite
+- **Backend:** Node.js + Express
+- **Database:** MongoDB Atlas
+- **Authentication:** Clerk
+- **Messaging:** Stream Chat API
+- **Background Jobs:** Inngest
 
-### Backend (`/backend`)
+## Getting Started
+
+### Prerequisites
+
+- Node.js & npm
+- MongoDB Atlas (cloud, free tier)
+- Clerk & Stream accounts (free tier)
+- Inngest (for scheduling jobs)
+
+### Setup
+
+#### 1. Clone the repo
 
 ```bash
+git clone https://github.com/burakorkmez/justcode.git
+cd justcode
+```
+
+#### 2. Setup Backend
+
+```bash
+cd backend
+npm install
+# Create and fill .env with your credentials
+npm run dev
+```
+
+#### 3. Setup Frontend
+
+```bash
+cd frontend
+npm install
+# Create and fill .env.local with your credentials
+npm run dev
+```
+
+#### 4. Environment Variables
+
+**Backend (.env)**
+
+```
 PORT=3000
 NODE_ENV=development
-
-DB_URL=your_mongodb_connection_url
-
-INNGEST_EVENT_KEY=your_inngest_event_key
-INNGEST_SIGNING_KEY=your_inngest_signing_key
-
-STREAM_API_KEY=your_stream_api_key
-STREAM_API_SECRET=your_stream_api_secret
-
-CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
-CLERK_SECRET_KEY=your_clerk_secret_key
-
+DB_URL=<your_mongo_uri>
+INNGEST_EVENT_KEY=<your_inngest_event_key>
+INNGEST_SIGNING_KEY=<your_inngest_signing_key>
+STREAM_API_KEY=<your_stream_api_key>
+STREAM_API_SECRET=<your_stream_api_secret>
+CLERK_PUBLISHABLE_KEY=<your_clerk_publishable_key>
+CLERK_SECRET_KEY=<your_clerk_secret_key>
 CLIENT_URL=http://localhost:5173
 ```
 
-### Frontend (`/frontend`)
+**Frontend (.env.local)**
 
-```bash
-VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
-
+```
+VITE_CLERK_PUBLISHABLE_KEY=<your_clerk_publishable_key>
 VITE_API_URL=http://localhost:3000/api
-
-VITE_STREAM_API_KEY=your_stream_api_key
+VITE_STREAM_API_KEY=<your_stream_api_key>
 ```
 
----
+#### 5. Running the App
 
-## 🔧 Run the Backend
+- Start backend and frontend servers (each in their own terminal)
+- Access the app at `http://localhost:5173`
 
-```bash
+## Contributing
 
-cd backend
-npm install
-npm run dev
-```
-
----
-
-## 🔧 Run the Frontend
-
-```
-bash
-cd frontend
-npm install
-npm run dev
-```
+Open to pull requests! Please fork and submit a PR.
+\*\*
