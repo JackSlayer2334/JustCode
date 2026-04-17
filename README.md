@@ -35,7 +35,7 @@
 #### 1. Clone the repo
 
 ```bash
-git clone https://github.com/burakorkmez/justcode.git
+git clone https://github.com/JackSlayer2334/justcode.git
 cd justcode
 ```
 
